@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+  .hero-bg {
+    background-image: url('./assets/images/bghero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
