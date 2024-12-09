@@ -11,8 +11,6 @@ function App() {
     </CartProvider>
     <Hero/>
     <Products />
-      
-
     </>
   )
 }
