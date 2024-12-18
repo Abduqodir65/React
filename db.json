@@ -1,4 +1,14 @@
 {
-    "fligths": [],
-    "users": []
+  "flights": [
+    {
+      "id": "1138",
+      "destination": "dwwdwd (Edited)",
+      "flyDate": "2024-12-18T19:00:00.000Z",
+      "returnDate": "2024-12-19T19:00:00.000Z",
+      "children": 2,
+      "seats": 1,
+      "userId": 1
+    }
+  ],
+  "users": []
 }

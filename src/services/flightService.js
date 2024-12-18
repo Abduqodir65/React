@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const BASE_URL = `${import.meta.env.VITE_FLIGHTS_API}/flights`;
 

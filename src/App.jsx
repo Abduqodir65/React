@@ -1,19 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store } from "./store/store";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import FlightBooking from "./pages/FlightBooking";
-
-// Pages
 import FlightBooking from "./pages/FlightBooking";
 import Login from "./pages/Login";
+import Navbar from "./components/navbar";
+import ProtectedRoute from "./components/ProtectedRoute"
+import Profile from "./pages/Profile";
+import OrdersList from "./pages/OrdersList";
+
+// Pages
+// import FlightBooking from "./pages/FlightBooking";
+// import Login from "./pages/Login";
 // import OrdersList from "./pages/OrdersList";
 
-import ProtectedRoute from "./components/ProtectedRoute";
-import Navbar from "./components/Navbar";
+// import ProtectedRoute from "./components/ProtectedRoute";
+// import Navbar from "./components/NavBar";
 // import UserProfile from "./pages/UserProfile";
 
 const App = () => {
@@ -23,27 +28,26 @@ const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<FlightBooking />}></Route>
-            <Route path="/login" element={<Login />}></Route>
+            <Route path="/" element={<FlightBooking/>} />
+            <Route path="/login"  element={<Login/>}/>
             <Route
-              path="/orders"
+              path='/orders'
               element={
                 <ProtectedRoute>
-                  {/* <OrdersList /> */}
-                  <h1>Orders list</h1>
+                  <OrdersList/>
                 </ProtectedRoute>
               }
             />
             <Route
-              path="/profile"
+              path='/profile'
               element={
                 <ProtectedRoute>
-                  {/* <UserProfile /> */}
-                  <h1>User profile</h1>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
-          </Routes>
+
+           </Routes>
           <ToastContainer />
         </Router>
       </LocalizationProvider>

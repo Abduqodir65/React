@@ -20,7 +20,7 @@ import {
   AccountCircle as ProfileIcon,
 } from "@mui/icons-material";
 
-import { logout } from "../redux/authSlice";
+import { logout } from "../store/authSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -43,14 +43,14 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" color="primary" elevation={2}>
+    <AppBar position='static' color='primary' elevation={2}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FlightIcon sx={{ fontSize: 32 }} />
           <Typography
-            variant="h5"
+            variant='h5'
             component={RouterLink}
-            to="/"
+            to='/'
             sx={{
               color: "white",
               textDecoration: "none",
@@ -65,23 +65,23 @@ const Navbar = () => {
           {isAuthenticated ? (
             <>
               <Button
-                color="inherit"
+                color='inherit'
                 component={RouterLink}
-                to="/profile"
+                to='/profile'
                 startIcon={<HomeIcon />}
               >
                 Profile
               </Button>
               <Button
-                color="inherit"
+                color='inherit'
                 component={RouterLink}
-                to="/orders"
+                to='/orders'
                 startIcon={<FlightIcon />}
               >
                 My Bookings
               </Button>
 
-              <IconButton onClick={handleMenuOpen} color="inherit">
+              <IconButton onClick={handleMenuOpen} color='inherit'>
                 <Avatar
                   src={user?.image || undefined}
                   alt={user?.username}
@@ -104,10 +104,10 @@ const Navbar = () => {
               >
                 <MenuItem disabled>
                   <Box>
-                    <Typography variant="subtitle1" fontWeight="bold">
+                    <Typography variant='subtitle1' fontWeight='bold'>
                       {user?.username}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant='body2' color='text.secondary'>
                       {user?.email}
                     </Typography>
                   </Box>
@@ -121,9 +121,9 @@ const Navbar = () => {
             </>
           ) : (
             <Button
-              color="inherit"
+              color='inherit'
               component={RouterLink}
-              to="/login"
+              to='/login'
               startIcon={<ProfileIcon />}
             >
               Login
