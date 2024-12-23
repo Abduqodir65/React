@@ -1,23 +1,20 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import { BrowserRouter, Route, Router, Routes } from 'react-router'
-import Home from './pages/Home'
-import TodoList from './pages/TodosList'
-import { login } from './services/login.service'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Products from './pages/Home';
+import Cart from './pages/Cart';
+import Header from './components/Header';
 
-const App = () => {
-  let loginRes = login()
-  console.log(loginRes);
-  
+
+function App() {
   return (
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/todos" element={<TodoList/>} />
-        </Routes>
-      </BrowserRouter>
-  )
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
